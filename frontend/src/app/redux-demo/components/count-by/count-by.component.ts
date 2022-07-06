@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
-import { selectCounterCurrentValue } from '../../state';
+import { selectCounterCountingBy } from '../../state';
 import { counterEventActions } from '../../state/actions/counter.actions';
 
 @Component({
@@ -15,7 +15,7 @@ export class CountByComponent implements OnInit {
   constructor(private store:Store) { }
 
   ngOnInit(): void {
-    this.by$ = this.store.select(selectCounterCurrentValue);
+    this.by$ = this.store.select(selectCounterCountingBy);
   }
 
   countBySet(by: number) {
