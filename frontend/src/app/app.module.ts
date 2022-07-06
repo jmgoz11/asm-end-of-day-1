@@ -10,6 +10,7 @@ import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { ReduxDemoModule } from './redux-demo/redux-demo.module';
 import { reducers } from './state';
+import { EffectsModule } from '@ngrx/effects';
 
 @NgModule({
   declarations: [
@@ -23,8 +24,8 @@ import { reducers } from './state';
     BrowserModule,
     AppRoutingModule,
     StoreModule.forRoot(reducers),
-    StoreDevtoolsModule.instrument()
-
+    StoreDevtoolsModule.instrument(),
+    EffectsModule.forRoot([])
   ],
   providers: [],
   bootstrap: [AppComponent]
